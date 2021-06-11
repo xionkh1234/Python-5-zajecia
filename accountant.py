@@ -6,8 +6,9 @@ magazyn = {}
 data = []
 account = {"balance": balance}
 
+
 while True:
-    action = input().strip()
+    action = input().strip()                       # WYWOŁANIE: python <nazwa_programu> saldo <plik_wejsciowy>
     if action == "saldo":
         change = int(input())
         comment = str(input())
@@ -18,7 +19,7 @@ while True:
         account["balance"] =+ balance
         data.append(["saldo", change, comment])
 
-    elif action == "zakup":
+    elif action == "zakup":               # WYWOŁANIE: python <nazwa_programu> zakup <plik_wejsciowy>
         item_id = str(input())
         price = int(input())
         quantity = int(input())
@@ -51,7 +52,7 @@ while True:
         break
 
 
-if sys.argv[1] == "sprzedaz":
+if sys.argv[1] == "sprzedaz":                     # WYWOŁANIE: python <nazwa_programu> sprzedaz <plik_wejsciowy>
     item_id = sys.argv[2]
     price = int(sys.argv[3])
     quantity = int(sys.argv[4])
@@ -86,7 +87,7 @@ if sys.argv[1] == "zakup":
             print(item)
     print("stop")
 
-if sys.argv[1] == "magazyn":
+if sys.argv[1] == "magazyn":                    # WYWOŁANIE: python <nazwa_programu> magazyn <plik_wejsciowy>
     item_id = str(sys.argv[4])
     quantity = 0
     if item_id not in magazyn:
@@ -107,9 +108,10 @@ if sys.argv[1] == "przeglad":
             print(item)
     print("stop")
 
-
+                                                # WYWOŁANIE: python <nazwa_programu> balance <plik_wejsciowy>
 if sys.argv[1] == "saldo":
     print(account["balance"])
 
 if sys.argv[1] == "balance":
     print(account["balance"])
+
